@@ -1,4 +1,4 @@
-const WHATSAPP_ATENDIMENTO = '+55 63 8469-2450';
+const WHATSAPP_ATENDIMENTO = '+55 63 98469-2450';
 
 (function () {
   window.paginaPronta = true;
