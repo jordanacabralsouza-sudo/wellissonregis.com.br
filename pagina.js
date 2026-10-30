@@ -113,3 +113,21 @@ const WHATSAPP_ATENDIMENTO = '+55 63 98469-2450';
   document.querySelector('.resultados-controles').hidden = false;
   atualiza();
 })();
+
+(function () {
+  var capa = document.querySelector('.video-capa');
+  if (!capa) return;
+  capa.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    var player = document.createElement('iframe');
+    player.src = 'https://www.youtube-nocookie.com/embed/aQmbAHvtL3c?autoplay=1&playsinline=1&rel=0';
+    player.title = 'Quantas repetições fazer para hipertrofia?';
+    player.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+    player.setAttribute('allowfullscreen', '');
+    player.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    player.tabIndex = 0;
+    capa.replaceWith(player);
+    player.focus({ preventScroll: true });
+  });
+})();
